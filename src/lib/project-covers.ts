@@ -2,10 +2,10 @@ import type { StaticImageData } from "next/image";
 
 import chattyArt from "@/assets/project-chatty.jpg";
 import docaiArt from "@/assets/project-docai.jpg";
-import { vendoraCover } from "@/lib/vendora-gallery";
+import vendoraArt from "@/assets/project-vendora.jpg";
 
 export const PROJECT_COVERS: Partial<Record<string, StaticImageData>> = {
-  vendora: vendoraCover,
+  vendora: vendoraArt,
   chatty: chattyArt,
   docai: docaiArt,
 };
