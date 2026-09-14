@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Amar Kajević — Portfolio
 
-## Getting Started
+Personal portfolio site built with Next.js 16 (App Router), React 19, TypeScript, and Tailwind CSS 4.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 16 (App Router, Turbopack)
+- **Styling:** Tailwind CSS 4, CSS custom properties for the design tokens in `src/app/globals.css`
+- **Fonts:** Inter, Space Grotesk, and JetBrains Mono via `next/font/google`
+- **Icons:** lucide-react, plus two hand-rolled SVGs for GitHub/LinkedIn
+
+## Structure
+
+```
+src/
+  app/
+    page.tsx                  # Home page
+    projects/[slug]/page.tsx  # Project detail pages (statically generated)
+    layout.tsx                # Root layout, fonts, metadata
+    sitemap.ts / robots.ts
+  components/                 # UI building blocks
+  lib/
+    projects.ts                # Project content/data
+    site.ts                    # Site-wide constants (email, social links)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project content lives in `src/lib/projects.ts` — add or edit an entry there to update the projects shown on the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Getting started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` — start the dev server
+- `npm run build` — production build (statically prerenders every route)
+- `npm run start` — serve the production build
+- `npm run lint` — ESLint
+- `npm run typecheck` — TypeScript, no emit
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploying
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Any Next.js-compatible host works (e.g. Vercel). Set `NEXT_PUBLIC_SITE_URL` to the production URL so metadata, the sitemap, and `robots.txt` point at the right domain.
