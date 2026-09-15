@@ -133,7 +133,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
             ))}
           </div>
           <span style={{ fontFamily: "JetBrains Mono", fontSize: 18, color: OG_COLORS.muted }}>
-            amarkajevic.dev
+            amar-kajevic.vercel.app
           </span>
         </div>
       </div>

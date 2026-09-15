@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { projects } from "@/lib/projects";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://amarkajevic.dev";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://amar-kajevic.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
